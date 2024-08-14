@@ -61,9 +61,10 @@ public class LocaleManager{
     private final Map<String, String> oldLingeringPotions = LocaleKeys.getLingeringPotionKeys();
     private final Map<String, String> oldSplashPotions = LocaleKeys.getSplashPotionKeys();
     private final Map<String, String> oldEntities = LocaleKeys.getEntityKeys();
-    private Map<String, String> englishTranslations;
+    private Map<String, String> englishTranslations; private LocaleLib plugin;
 
     public LocaleManager() {
+        plugin = LocaleLib.getPlugin(LocaleLib.class);
         oldVersion = isBelow113();
         if (Material.getMaterial("LINGERING_POTION") != null) {
             // Bukkit version is 1.9+
@@ -130,9 +131,9 @@ public class LocaleManager{
             if (potion.getType().getEffectType() != null) {
                 potionName = oldPotions1dot8.get(potion.getType().getEffectType().getName());
             }
-            msg = msg.replace("<item>", translate(message, potionName, "<item>"));
+            String finalMsg = msg.replace("<item>", translate(message, potionName, "<item>"));
 
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tellraw " + formatName(player) + " [\"" + msg + "\"]");
+            Bukkit.getGlobalRegionScheduler().execute(plugin, () -> Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tellraw " + formatName(player) + " [\"" + finalMsg + "\"]"));
             return true;
         }
         return sendMessage(player, message, itemStack.getType(), itemStack.getDurability(), itemStack.getEnchantments(),
@@ -181,7 +182,8 @@ public class LocaleManager{
         for (final String lk : lvlKeys) {
             msg = msg.replaceFirst("<level>",  translate(msg, lk, "<level>"));
         }
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tellraw " + formatName(player) + " [\"" + msg + "\"]");
+        String finalMsg = msg;
+        Bukkit.getGlobalRegionScheduler().execute(plugin, () -> Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tellraw " + formatName(player) + " [\"" + finalMsg + "\"]"));
         return true;
     }
 
@@ -233,7 +235,8 @@ public class LocaleManager{
                 msg = message.replaceFirst("<level>",  translate(message, lk, "<level>"));
             }
         }
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tellraw " + formatName(player) + " [\"" + msg + "\"]");
+        String finalMsg = msg;
+        Bukkit.getGlobalRegionScheduler().execute(plugin, () -> Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tellraw " + formatName(player) + " [\"" + finalMsg + "\"]"));
         return true;
     }
 
@@ -255,7 +258,7 @@ public class LocaleManager{
         }
         final String key = queryEntityType(type, extra);
         final String msg = message.replace("<mob>", translate(message, key, "<mob>"));
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tellraw " + formatName(player) + " [\"" + msg + "\"]");
+        Bukkit.getGlobalRegionScheduler().execute(plugin, () -> Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tellraw " + formatName(player) + " [\"" + msg + "\"]"));
         return true;
     }
 
