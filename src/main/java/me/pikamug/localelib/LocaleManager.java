@@ -35,6 +35,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.EnchantmentStorageMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.Potion;
 
 import java.io.IOException;
@@ -61,10 +62,10 @@ public class LocaleManager{
     private final Map<String, String> oldLingeringPotions = LocaleKeys.getLingeringPotionKeys();
     private final Map<String, String> oldSplashPotions = LocaleKeys.getSplashPotionKeys();
     private final Map<String, String> oldEntities = LocaleKeys.getEntityKeys();
-    private Map<String, String> englishTranslations; private LocaleLib plugin;
+    private Map<String, String> englishTranslations; private Plugin plugin;
 
-    public LocaleManager() {
-        plugin = LocaleLib.getPlugin(LocaleLib.class);
+    public LocaleManager(Plugin javaPlugin) {
+        plugin = javaPlugin;
         oldVersion = isBelow113();
         if (Material.getMaterial("LINGERING_POTION") != null) {
             // Bukkit version is 1.9+

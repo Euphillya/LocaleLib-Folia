@@ -32,7 +32,7 @@ public class LocaleLib extends JavaPlugin {
     
     @Override
     public void onEnable() {
-        manager = new LocaleManager();
+        manager = new LocaleManager(this);
     }
 
     @Override
