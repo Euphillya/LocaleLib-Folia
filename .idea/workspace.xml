@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7d6a5b2a-6ff2-4697-9615-12bb65b9b9fe" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/pikamug/localelib/LocaleLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/pikamug/localelib/LocaleLib.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/pikamug/localelib/LocaleManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/pikamug/localelib/LocaleManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,23 +36,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.LocaleLib [clean,compile,package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.LocaleLib [install:install-file...].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/JASON/Documents/Dev/LocaleLib-Folia&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.LocaleLib [clean,compile,package].executor": "Run",
+    "Maven.LocaleLib [install:install-file...].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Dev/excareborn/LocaleLib-Folia",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\JASON\Documents\Dev\LocaleLib-Folia" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.LocaleLib [install:install-file...]">
+  <component name="RunManager" selected="Maven.LocaleLib [clean,compile,package]">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="LocaleLib-Folia" />
       <method v="2">
