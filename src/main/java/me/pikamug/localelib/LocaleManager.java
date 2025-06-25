@@ -169,6 +169,7 @@ public class LocaleManager{
             matKey = queryMaterial(material, durability, meta);
         } catch (final Exception ex) {
             Bukkit.getLogger().severe("[LocaleLib] Unable to query Material: " + material.name());
+            ex.printStackTrace();
             return false;
         }
         if (meta instanceof EnchantmentStorageMeta) {
@@ -384,7 +385,7 @@ public class LocaleManager{
      *
      * @param material the material to check
      * @param durability the durability to check
-     * @param meta the item meta data to check
+     * @param meta the item metadata to check
      * @return the raw key
      * @throws IllegalArgumentException if the specified material parameter is null or item/block cannot be found
      */
@@ -436,7 +437,7 @@ public class LocaleManager{
                     if (item == null) {
                         throw new IllegalArgumentException(material.name() + " material could not be queried!");
                     }
-                    matKey = (String) resolveMethod(itemClazz, "getDescriptionId", "a", "getName").invoke(item);
+                    matKey = (String) resolveMethod(itemClazz, "getDescriptionId", "a", "getName", "j", "l").invoke(item);
                     if (meta instanceof PotionMeta) {
                         matKey += ".effect." + ((PotionMeta)meta).getBasePotionData().getType().name().toLowerCase()
                                 .replace("regen", "regeneration").replace("speed", "swiftness").replace("jump", "leaping")
